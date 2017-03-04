@@ -7,6 +7,11 @@ import random
 def static(path):
     return bottle.static_file(path, root='static/')
 
+@bottle.get('/')
+def index():
+    return {
+        "Hello World": ""
+    }
 
 @bottle.post('/start')
 def start():
@@ -23,10 +28,10 @@ def start():
     # TODO: Do things with data
 
     return {
-        'color': '#00FF00',
-        'taunt': '{} ({}x{})'.format(game_id, board_width, board_height),
+        'color': '#0000FF',
+        'taunt': 'I can\'t even',
         'head_url': head_url,
-        'name': 'battlesnake-python'
+        'name': 'Basic AI'
     }
 
 
